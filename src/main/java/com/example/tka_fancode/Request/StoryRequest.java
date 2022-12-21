@@ -14,7 +14,7 @@ public class StoryRequest {
     @NotBlank
     private String briefSummary;
     @NotBlank
-    private double rating;
+    private String rating;
     @NotBlank
     private String creators;
     @NotBlank
@@ -24,7 +24,4 @@ public class StoryRequest {
     @NotBlank
     private String extraInformation;
 
-    /*@NotNull
-    @Valid
-    private AddressRequest address;*/
 }

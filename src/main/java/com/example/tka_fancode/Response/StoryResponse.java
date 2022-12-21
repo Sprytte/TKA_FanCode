@@ -14,7 +14,7 @@ public class StoryResponse {
     private long id;
     private String adaptationName;
     private String briefSummary;
-    private double rating;
+    private String rating;
     private String creators;
     private String length;
     private String fullSummary;

@@ -19,7 +19,7 @@ public class Story {
     @Column(name="brief_summary", nullable = false)
     private String briefSummary;
     @Column(name="rating", nullable = false)
-    private double rating;
+    private String rating;
     @Column(name="creators", nullable = false)
     private String creators;
     @Column(name="length", nullable = false)
