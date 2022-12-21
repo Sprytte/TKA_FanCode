@@ -20,14 +20,20 @@ public class Arc {
     private String arcName;
     @Column(name="arc_description", nullable = false)
     private String arcDescription;
+
     @ManyToOne(optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name="story_id")
     private Story story;
 
+    @OneToOne(cascade = CascadeType.ALL, optional = false)
+    private Summary summary;
+
     public Arc(ArcRequest arcRequest){
         arcName = arcRequest.getArcName();
         arcDescription = arcRequest.getArcDescription();
+
+        summary = new Summary(arcRequest.getSummary());
     }
 }
 

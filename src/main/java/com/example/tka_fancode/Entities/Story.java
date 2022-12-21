@@ -28,7 +28,6 @@ public class Story {
     private String fullSummary;
     @Column(name="extra_information", nullable = false)
     private String extraInformation;
-    //Character foreign Key maybe
 
     public Story(StoryRequest storyRequest){
         adaptationName = storyRequest.getAdaptationName();

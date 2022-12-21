@@ -20,6 +20,7 @@ public class StoryResponse {
     private String fullSummary;
     private String extraInformation;
 
+
     public StoryResponse(Story story){
         id = story.getId();
         adaptationName = story.getAdaptationName();
@@ -30,10 +31,5 @@ public class StoryResponse {
         fullSummary = story.getFullSummary();
         extraInformation = story.getExtraInformation();
     }
-
-    /*private AddressResponse address;
-    public TeacherResponse(Teacher teacher){
-        address = new AddressResponse(teacher.getAddress());
-    }*/
 }
 

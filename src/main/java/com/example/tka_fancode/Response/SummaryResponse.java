@@ -1,5 +1,6 @@
 package com.example.tka_fancode.Response;
 
+import com.example.tka_fancode.Entities.Summary;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,17 +12,10 @@ import org.springframework.stereotype.Service;
 @NoArgsConstructor
 @AllArgsConstructor
 public class SummaryResponse {
-    private long id;
     private String summaryDescription;
-}
-/*
-    private TeacherResponse teacher;
 
-    public CourseResponse(Course course){
-        id = course.getId();
-        name = course.getName();
-        credits = course.getCredits();
-        teacher = new TeacherResponse(course.getTeacher());
+    public SummaryResponse(Summary summary) {
+        summaryDescription = summary.getSummaryDescription();
     }
-*/
+}
 

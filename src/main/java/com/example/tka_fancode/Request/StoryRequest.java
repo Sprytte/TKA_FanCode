@@ -1,7 +1,9 @@
 package com.example.tka_fancode.Request;
 
 import jakarta.persistence.Column;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.NotFound;
@@ -23,5 +25,4 @@ public class StoryRequest {
     private String fullSummary;
     @NotBlank
     private String extraInformation;
-
 }
