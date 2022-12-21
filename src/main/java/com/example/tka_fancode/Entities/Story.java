@@ -16,4 +16,17 @@ public class Story {
     @Column(name="adaptation_name", nullable = false)
     private String adaptationName;
     //Character foreign Key maybe
+
+    /*@OneToOne(cascade = CascadeType.ALL, optional = false)
+    private Address address;
+
+    public Teacher(TeacherRequest teacherRequest)
+    {
+        firstName = teacherRequest.getFirstName();
+        lastName = teacherRequest.getLastName();
+        email = teacherRequest.getEmail();
+        age = teacherRequest.getAge();
+
+        address = new Address(teacherRequest.getAddress());
+    }*/
 }
