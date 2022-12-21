@@ -1,16 +1,16 @@
 package com.example.tka_fancode.Request;
 
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class ArcRequest {
-    //@NotBlank
+    @NotBlank
     private String arcName;
-    private String arcRequest;
-
-    /*@NotNull
-    @Valid
-    private AddressRequest address;*/
+    @NotBlank
+    private String arcDescription;
 }

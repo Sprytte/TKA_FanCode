@@ -1,9 +1,12 @@
 package com.example.tka_fancode.Entities;
 
+import com.example.tka_fancode.Request.ArcRequest;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Getter
 @Setter
@@ -17,6 +20,14 @@ public class Arc {
     private String arcName;
     @Column(name="arc_description", nullable = false)
     private String arcDescription;
-    //Adaptation id FK from Story table
+    @ManyToOne(optional = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JoinColumn(name="story_id")
+    private Story story;
 
+    public Arc(ArcRequest arcRequest){
+        arcName = arcRequest.getArcName();
+        arcDescription = arcRequest.getArcDescription();
+    }
 }
+
