@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface StoryRepository extends CrudRepository<Story, Long> {
     public List<Story> findAllByAdaptationNameIgnoreCase(String adaptationName);
+    public Story findByAdaptationNameIgnoreCase(String adaptationName);
 }

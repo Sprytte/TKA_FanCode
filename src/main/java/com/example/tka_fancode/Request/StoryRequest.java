@@ -25,4 +25,6 @@ public class StoryRequest {
     private String fullSummary;
     @NotBlank
     private String extraInformation;
+    @NotBlank
+    private String imageAddress;
 }

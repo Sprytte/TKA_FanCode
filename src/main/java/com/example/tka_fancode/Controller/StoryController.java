@@ -51,6 +51,12 @@ public class StoryController {
         });
         return storyResponses;
     }
+    @GetMapping("/id")
+    public StoryResponse getStory(@PathVariable long id,@RequestParam(required = false) String adaptationName){
+        Story story = storyService.getStory(adaptationName);
+        StoryResponse storyResponse = new StoryResponse(story) ;
+        return storyResponse;
+    }
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public StoryResponse addStory(@Valid @RequestBody StoryRequest storyRequest){

@@ -44,6 +44,12 @@ public class StoryService {
 
         return storyRepository.findAllByAdaptationNameIgnoreCase(adaptationNameParam);
     }
+    public Story getStory(String adaptationNameParam){
+        if(adaptationNameParam == null || adaptationNameParam.isBlank())
+            return (Story) storyRepository.findByAdaptationNameIgnoreCase(adaptationNameParam);
+
+        return storyRepository.findByAdaptationNameIgnoreCase(adaptationNameParam);
+    }
     public Story addStory(StoryRequest storyRequest){
         Story story = new Story(storyRequest);
         return storyRepository.save(story);

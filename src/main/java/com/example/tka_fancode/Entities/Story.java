@@ -28,6 +28,8 @@ public class Story {
     private String fullSummary;
     @Column(name="extra_information", nullable = false)
     private String extraInformation;
+    @Column(name="imgAddress", nullable = false)
+    private String imageAddress;
 
     public Story(StoryRequest storyRequest){
         adaptationName = storyRequest.getAdaptationName();
@@ -37,5 +39,6 @@ public class Story {
         length = storyRequest.getLength();
         fullSummary = storyRequest.getFullSummary();
         extraInformation = storyRequest.getExtraInformation();
+        imageAddress = storyRequest.getImageAddress();
     }
 }

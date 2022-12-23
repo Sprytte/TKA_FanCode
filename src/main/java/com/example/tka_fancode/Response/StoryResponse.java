@@ -19,6 +19,7 @@ public class StoryResponse {
     private String length;
     private String fullSummary;
     private String extraInformation;
+    private String imageAddress;
 
 
     public StoryResponse(Story story){
@@ -30,6 +31,7 @@ public class StoryResponse {
         length = story.getLength();
         fullSummary = story.getFullSummary();
         extraInformation = story.getExtraInformation();
+        imageAddress = story.getImageAddress();
     }
 }
 
