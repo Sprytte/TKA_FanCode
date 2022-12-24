@@ -1,0 +1,9 @@
+Title: The King's Avatar Fan Page
+
+Description: The application is a fan site that allows users to  learn more about the novel and its adaptations as well as the best moments in the novel to allow readers
+to reread their favorites moment without having to search desperately for hours.
+The project was built using a full REST API using springboot on IntelliJ and then connected to REACT JS to display on the front-end. I also used the 'toast' and
+'stackable panes' libraries available on github.
+To run the project, you must first run the JPA project, after which you can post all initial data using postman and, finally, run the project in visual studio.
+One of my biggest challenges was getting the stackable panes to work, as I had a lot of difficulty in trying to get each pane displaying a corresponding fan
+favorite scene.
