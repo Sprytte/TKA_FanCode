@@ -8,3 +8,6 @@ To run the project, you must first run the JPA project, after which you can post
 One of my biggest challenges was getting the stackable panes to work, as I had a lot of difficulty in trying to get each pane displaying a corresponding fan
 favorite scene. I did end up finding a fix after a lot of trial and error and debugging. However, when a user adds a scene or deletes one, the page doesn't refresh, so
 I hope to be able to change that in the future. I would also like to add arcs/favorites depending on the adaptation in the future.
+
+Design: Each page (story, arc, and favorite) is inside of the HomePage in a const which is switched out using onClick functions in the nav and a useState to switch
+between the pages. The items returned by getRequests are returned inside their corresponding page and then called in the HomePage by their function.
