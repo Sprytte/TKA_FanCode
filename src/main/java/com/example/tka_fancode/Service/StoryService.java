@@ -1,11 +1,14 @@
 package com.example.tka_fancode.Service;
 
 import com.example.tka_fancode.Entities.Arc;
+import com.example.tka_fancode.Entities.Favorite;
 import com.example.tka_fancode.Entities.Story;
 import com.example.tka_fancode.Exception.ResourceNotFoundException;
 import com.example.tka_fancode.Repository.ArcRepository;
+import com.example.tka_fancode.Repository.FavoriteRepository;
 import com.example.tka_fancode.Repository.StoryRepository;
 import com.example.tka_fancode.Request.ArcRequest;
+import com.example.tka_fancode.Request.FavoriteRequest;
 import com.example.tka_fancode.Request.StoryRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +21,30 @@ public class StoryService {
     StoryRepository storyRepository;
     @Autowired
     ArcRepository arcRepository;
+    @Autowired
+    FavoriteRepository favoriteRepository;
 
-    public Arc addArc(long story_id, ArcRequest arcRequest){
-        Story story = storyRepository.findById(story_id).orElseThrow(
+    public Favorite addFavorite(long storyId, FavoriteRequest favoriteRequest){
+        Story story = storyRepository.findById(storyId).orElseThrow(
+                ()-> new ResourceNotFoundException("Story ID not found"));
+
+        Favorite favoriteToBeSaved = new Favorite(favoriteRequest);
+        favoriteToBeSaved.setStory(story);
+
+        return favoriteRepository.save(favoriteToBeSaved);
+    }
+    public List<Favorite> getAllFavorites(long storyId){
+        return favoriteRepository.findAllByStoryId(storyId);
+    }
+    public void deleteAllFavorites(long storyId){
+        if(storyRepository.existsById(storyId))
+            favoriteRepository.deleteAllByStoryId(storyId);
+        else
+            throw new ResourceNotFoundException("Story ID not found");
+    }
+
+    public Arc addArc(long storyId, ArcRequest arcRequest){
+        Story story = storyRepository.findById(storyId).orElseThrow(
                 ()->new ResourceNotFoundException("Story ID is not found"));
 
         Arc arcToBeSaved = new Arc(arcRequest);
